@@ -3,9 +3,9 @@ function calculate() {
   var result;
   var original = document.getElementById("original");
   var temp = original.value;
-  var regexp = ;
+  var regexp = /((-)?d+(\.d+)?)(C|F)/;
   
-  var m = temp.match(......);
+  var m = temp.match(regexp);
   
   if (m) {
     var num = ....;
