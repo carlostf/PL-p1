@@ -3,7 +3,7 @@ function calculate() {
   var result;
   var original = document.getElementById("original");
   var temp = original.value;
-  var regexp = /((-)?d+(\.d+)?)(C|F)/;
+  var regexp = /-?[0-9]*\.?[0-9]*[a-zA-Z]+/
   
   var m = temp.match(regexp);
   m = m[0];
@@ -14,15 +14,13 @@ function calculate() {
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
       result = (num * 9/5)+32;
-      result = 'C'
-    }
-    else {
+      result = result;
+      converted.innerHTML = result + 'F';
+    } else {
       result = (num - 32)*5/9;
-      result = 'F';
-    }
-    converted.innerHTML = result;
-  }
-  else {
+      result =  result;
+      converted.innerHTML = result + 'C';
+  } else {
     converted.innerHTML = "ERROR! Try something like '-4.2C' instead";
   }
 }
