@@ -6,18 +6,19 @@ function calculate() {
   var regexp = /((-)?d+(\.d+)?)(C|F)/;
   
   var m = temp.match(regexp);
+  m = m[0];
   
   if (m) {
-    var num = ....;
-    var type = ....;
+    var num = m.substring(m.length-1, 0);
+    var type = m.substring(1, m.length-1);
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
       result = (num * 9/5)+32;
-      result = document.getElementById("converted");
+      result = 'C'
     }
     else {
       result = (num - 32)*5/9;
-      result = document.getElementById("converted");
+      result = 'F';
     }
     converted.innerHTML = result;
   }
